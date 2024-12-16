@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';  // Corrected import path for Observable
 })
 export class SeatService {
 
-  private apiUrl = 'https://unstop.zapto.org/api/'; // Base URL for your Laravel API
+  private apiUrl = 'http://127.0.0.1:8000/'; // Base URL for your Laravel API
 
   // Create headers for multipart form data
   private headers = new HttpHeaders({

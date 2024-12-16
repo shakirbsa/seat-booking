@@ -1,0 +1,51 @@
+
+<div class="container mt-5">
+    <h2 class="mb-4">Seat Booking</h2>
+    <ngx-spinner  bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="white" type="ball-spin-clockwise">Loading...</ngx-spinner>
+
+    <!-- Number of Seats Input -->
+    <div class="mb-3">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="seatNumber" class="form-label">Number of Seats</label>
+            </div>
+            <div class="col-md-4">
+                <input type="number" id="seatNumber"  [(ngModel)]="numberofseats" class="form-control" placeholder="Enter number of seats" min="1" >
+            </div>
+            <div class="col-md-2">
+              <button class="btn btn-primary" (click)=" bookSeats()">Book</button>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-primary" (click)=" resetSeats()">Reset</button>
+        </div>
+        </div>
+    </div>
+    
+</div>
+
+
+    <div class="container mt-5">
+        <div *ngFor="let row of seats" class="seat-row">
+            <!-- Iterate over each seat in the row -->
+            <div *ngFor="let seat of row"  [ngClass]="{'seat': true, 'booked': seat.is_booked === 1}">
+              <div  >
+                {{ seat.id }} 
+              </div>
+            </div>
+          </div>
+          
+        
+
+       
+        <div class="legend">
+            <div>
+                <div class="available-seat"></div>
+                <p>Available</p>
+            </div>
+            <div>
+                <div class="booked-seat"></div>
+                <p>Booked</p>
+            </div>
+        </div>
+    </div>
+
